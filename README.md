@@ -1,16 +1,130 @@
-# perplexity_app
+# Infofusion
 
-A new Flutter project.
+Infofusion is an advanced information retrieval application that leverages Retrieval Augmented Generation (RAG) to deliver contextually relevant information to users in real-time.
 
-## Getting Started
+## Overview
 
-This project is a starting point for a Flutter application.
+Infofusion combines the power of Flutter, FastAPI, and Gemini API to create a seamless information retrieval experience. The application uses state-of-the-art natural language processing techniques to understand user queries and provide accurate, relevant responses.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Features
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Real-time Information Retrieval**: Get instant answers to your queries using advanced RAG techniques
+- **Cross-Platform Support**: Access Infofusion on any device through the Flutter-based frontend
+- **Semantic Search**: Leverage Sentence Transformers for understanding the meaning behind your queries
+- **Web Content Integration**: Extract high-quality information from web sources using Trafilatura
+- **Enhanced Search Capabilities**: Supplement knowledge retrieval with Tavily search API
+- **Real-time Updates**: Receive instant responses through WebSocket communication
+
+## Technology Stack
+
+### Frontend
+- **Flutter**: Cross-platform UI framework for building natively compiled applications
+
+### Backend
+- **FastAPI**: High-performance Python web framework for building APIs
+- **WebSockets**: Protocol for real-time, bidirectional communication
+- **Gemini API**: Google's advanced language model for generating human-like responses
+- **Sentence Transformers**: Neural network models for generating semantically meaningful embeddings
+- **Tavily**: AI-powered search API for enhanced knowledge retrieval
+- **Trafilatura**: Python package for web scraping and text extraction
+
+## Architecture
+
+```
+┌─────────────┐     WebSockets     ┌─────────────┐      ┌─────────────┐
+│             │<------------------>│             │<---->│  Gemini API │
+│   Flutter   │    HTTP/REST       │   FastAPI   │      └─────────────┘
+│  Frontend   │<------------------>│   Backend   │      ┌─────────────┐
+│             │                    │             │<---->│    Tavily   │
+└─────────────┘                    └─────────────┘      └─────────────┘
+                                         │
+                                         ▼
+                              ┌─────────────────────┐
+                              │ Sentence Transformers│
+                              └─────────────────────┘
+                                         │
+                                         ▼
+                              ┌─────────────────────┐
+                              │     Trafilatura     │
+                              └─────────────────────┘
+```
+
+## Installation
+
+### Prerequisites
+- Python 3.8+
+- Flutter SDK
+- Google API key for Gemini
+- Tavily API key
+
+### Backend Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/Infofusion.git
+cd Infofusion/backend
+
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Set environment variables
+export GEMINI_API_KEY=your_gemini_api_key
+export TAVILY_API_KEY=your_tavily_api_key
+
+# Run the FastAPI server
+uvicorn main:app --reload
+```
+
+### Frontend Setup
+
+```bash
+# Navigate to the Flutter project
+cd ../frontend
+
+# Get Flutter dependencies
+flutter pub get
+
+# Run the app in debug mode
+flutter run
+```
+
+## Usage
+
+1. Launch the application
+2. Enter your query in the search bar
+3. Receive contextually relevant information in real-time
+4. Explore related topics and dive deeper into subjects of interest
+
+## Future Improvements
+
+- Integration with additional LLM providers
+- Implementation of user authentication
+- Addition of history tracking for previous queries
+- Support for voice input and output
+- Enhanced visualization of information
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgements
+
+- Google for providing the Gemini API
+- The Flutter team for their excellent cross-platform framework
+- The FastAPI team for their high-performance web framework
+- The creators of Sentence Transformers, Tavily, and Trafilatura
