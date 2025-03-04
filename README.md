@@ -104,3 +104,7 @@ flutter run
 - The Flutter team for their excellent cross-platform framework
 - The FastAPI team for their high-performance web framework
 - The creators of Sentence Transformers, Tavily, and Trafilatura
+
+## Demo Video
+[Watch the Demo Video](https://drive.google.com/file/d/14Xqjhp0It84m-xEd3CEfuw4p6-iWJ12P/view?usp=drive_link)
+
