@@ -62,30 +62,20 @@ Infofusion combines the power of Flutter, FastAPI, and Gemini API to create a se
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/Infofusion.git
-cd Infofusion/backend
+git clone git@github.com:San23042001/infofusion.git
+cd server
 
 # Create and activate virtual environment
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install dependencies
-pip install -r requirements.txt
-
-# Set environment variables
-export GEMINI_API_KEY=your_gemini_api_key
-export TAVILY_API_KEY=your_tavily_api_key
-
 # Run the FastAPI server
-uvicorn main:app --reload
+fastapi dev main.py
 ```
 
 ### Frontend Setup
 
 ```bash
-# Navigate to the Flutter project
-cd ../frontend
-
 # Get Flutter dependencies
 flutter pub get
 
@@ -107,20 +97,6 @@ flutter run
 - Addition of history tracking for previous queries
 - Support for voice input and output
 - Enhanced visualization of information
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgements
 
